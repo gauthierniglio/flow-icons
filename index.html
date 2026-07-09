@@ -215,8 +215,10 @@
     font-size: 10.5px;
     color: var(--ink-muted);
     text-align: center;
-    word-break: break-word;
-    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
   }
   .card-actions {
     position: absolute;
@@ -393,7 +395,7 @@ function buildGrid(filter = '') {
       <div class="icon-display">
         <svg width="${currentSize}" height="${currentSize}" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">${svgContent.replace(/#1A1A1A/g, 'currentColor')}</svg>
       </div>
-      <div class="icon-name">${fileName}</div>
+      <div class="icon-name" title="${fileName}">${fileName}</div>
       <div class="card-actions">
         <button class="action-btn copy-btn" title="Copy SVG">${COPY_ICON_SVG('outline')}</button>
         <button class="action-btn download-btn" title="Download SVG">${DOWNLOAD_ICON_SVG}</button>
