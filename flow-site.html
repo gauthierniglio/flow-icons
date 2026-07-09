@@ -220,29 +220,27 @@
   }
   .card-actions {
     position: absolute;
-    left: 0; right: 0; bottom: 0;
+    top: 10px; right: 10px;
     display: flex;
+    gap: 4px;
     opacity: 0;
     transition: opacity 0.15s;
-    border-radius: 0 0 13px 13px;
-    overflow: hidden;
   }
   .icon-card:hover .card-actions { opacity: 1; }
   .action-btn {
-    flex: 1;
-    height: 32px;
+    width: 24px; height: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--card-bg);
-    background: var(--ink);
-    border: none;
+    color: var(--ink-muted);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
     cursor: pointer;
-    transition: background 0.15s, color 0.15s;
+    transition: color 0.15s, border-color 0.15s;
   }
-  .action-btn + .action-btn { border-left: 1px solid rgba(255,255,255,0.15); }
-  .action-btn:hover { background: var(--accent); }
-  .action-btn.done { background: var(--accent); }
+  .action-btn:hover { color: var(--ink); border-color: var(--ink-muted); }
+  .action-btn.done { color: var(--accent); border-color: var(--accent); }
   .action-btn svg { width: 13px; height: 13px; }
 
   .empty-state {
