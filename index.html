@@ -212,7 +212,7 @@
     transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
     position: relative;
     overflow: hidden;
-  }
+}
   .icon-card:hover {
     border-color: var(--accent);
     transform: translateY(-2px);
@@ -232,28 +232,32 @@
   }
   .card-actions {
     position: absolute;
-    top: 8px; right: 8px;
+    inset: 0;
     display: flex;
-    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(20, 22, 27, 0.7);
+    border-radius: 14px;
     opacity: 0;
     transition: opacity 0.15s;
-  }
+}
   .icon-card:hover .card-actions { opacity: 1; }
   .action-btn {
     width: 32px; height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--ink-muted);
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 6px;
+    color: var(--ink);
+    background: var(--card-bg);
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
-    transition: color 0.15s, border-color 0.15s;
-  }
-  .action-btn:hover { color: var(--ink); border-color: var(--ink-muted); }
-  .action-btn.done { color: var(--accent); border-color: var(--accent); }
-  .action-btn svg { width: 16px; height: 16px; }
+    transition: background 0.15s, color 0.15s, transform 0.1s;
+}
+  .action-btn:hover { background: var(--accent); color: white; transform: scale(1.08); }
+  .action-btn.done { background: var(--accent); color: white; }
+  .action-btn svg { width: 14px; height: 14px; }
 
   .empty-state {
     text-align: center;
