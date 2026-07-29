@@ -401,7 +401,7 @@ function buildGrid(filter = '') {
     const svgContent = ICONS[name][style];
     const fileName = fillOn ? `${name}-fill` : name;
 
-    const namedSvg = `<!-- ${fileName}.svg -->\n<svg width="24" height="24" viewBox="0 0 24 24" fill="none" data-name="${fileName}" xmlns="http://www.w3.org/2000/svg">${svgContent}</svg>`;
+    const namedSvg = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" id="${fileName}" xmlns="http://www.w3.org/2000/svg">${svgContent}</svg>`;
 
     card.innerHTML = `
       <div class="icon-display">
